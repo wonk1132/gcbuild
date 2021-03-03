@@ -1,16 +1,10 @@
 # In this directory, run the following command to build this builder.
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
-steps:
 - name: 'hseeberger/scala-sbt:8u222_1.3.5_2.13.1'
   args:
   - 'docker'
   - 'run'
-  - '-v /var/run/docker.sock:/var/run/docker.sock'
-  - '-ti docker'
-  waitFor: ['-']
-- name: 'hseeberger/scala-sbt:8u222_1.3.5_2.13.1'
-  args:
-  - 'sbt'
-  - 'docker:publish'
+  - '--privileged'
+  - '-d docker:dind'
   waitFor: ['-']
