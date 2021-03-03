@@ -2,7 +2,7 @@
 # $ gcloud builds submit . --config=cloudbuild.yaml
 
 steps:
-- name: 'hseeberger/scala-sbt'
+- name: 'hseeberger/scala-sbt:8u222_1.3.5_2.13.1'
   args:
   - 'sbt'
   - 'docker:publishLocal'
