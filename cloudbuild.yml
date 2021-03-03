@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/gcbuild:latest', '.' ]
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/gcbuild:latest', 'target/docker/stage/Dockerfile' ]
 images:
 - 'gcr.io/$PROJECT_ID/gcbuild:latest'
