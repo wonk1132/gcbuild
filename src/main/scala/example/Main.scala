@@ -2,6 +2,6 @@ package example
 
 object Main extends App {
 
-  println("asdf 9")
+  println("asdf 10")
   
 }
